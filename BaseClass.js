@@ -2,7 +2,7 @@ class BaseClass{
     constructor(x, y, width, height, angle) {
         var options = {
             'restitution':0.8,
-            'friction':0.1,
+            'friction':0,
             'density':3,
             'isStatic': false
         }

@@ -2,9 +2,9 @@ class Circle{
     constructor(x, y, radius) {
         var options = {
             'restitution':0.8,
-            'friction':1.0,
-            'density':1.0,
-            'isStatic': true
+            'friction':0,
+            'density':0.5,
+            'isStatic': false
         }
         this.body = Bodies.circle(x, y, radius,  options);
       this.radius = radius

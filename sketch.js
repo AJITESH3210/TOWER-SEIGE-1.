@@ -4,7 +4,7 @@ const Bodies = Matter.Bodies;
 const Constraint = Matter.Constraint;
 
 var engine, world;
-var ground1, ground2;
+var ground1, ground2, mainGround
 var block1, block2, block3, block4, block5, block6, block7, block8,block9,block10;
 var block11, block12, block13, block14, block15, block16, block17, block18, block19, block20;
 var block21, block22, block23;
@@ -15,7 +15,7 @@ function setup(){
     engine = Engine.create();
     world = engine.world;
 
-
+    mainGround = new Ground(600,650,1200,30);
     ground1 = new Ground(540,550,280,20);
     ground2 = new Ground(1000, 350, 280, 20);
     
@@ -43,19 +43,19 @@ function setup(){
     block22 = new Box2(1060,265,60,50);
     block23 = new Box3(1000,215,60,50);
     
-    polygon1 = new Circle(150,200,30);
+    polygon1 = new Circle(200,200,30);
 
    // Matter.Bodies.polygon1(400,450,6,30);
     //polygon1 = Bodies.circle(50,200,20);
     World.add(world,polygon1);
-    slingshot = new SlingShot(polygon1.body, { x : 100  ,y : 200 } );
+    slingshot = new SlingShot(polygon1.body, { x : 200  ,y : 200 } );
 }
 
 function draw(){
     background(89, 230, 255);
     Engine.update(engine);
    
-    
+    mainGround.display();
     ground1.display();
     ground2.display();
 
